@@ -44,9 +44,13 @@ class TestDemo1:
         self.driver.implicitly_wait(10)
         var = 1
         while var == 1:
-            action1 = TouchAction(self.driver).tap(x=226, y=1677)
-            action2 = TouchAction(self.driver).tap(x=824, y=1707)
-            MultiAction(self.driver).add(action1,action2).perform()
+            action1 = TouchAction(self.driver)
+            action2 = TouchAction(self.driver)
+            mul_action =MultiAction(self.driver)
+            action2.tap(x=226, y=1677)
+            action2.tap(x=824, y=1707)
+            mul_action.add(action1,action2)
+            mul_action.perform()
 
 
 
